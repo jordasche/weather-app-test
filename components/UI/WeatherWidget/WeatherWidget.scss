@@ -1,0 +1,18 @@
+.weather-widget {
+   width: 600px;
+   display: none;
+   background-color: white;
+   padding: 3px;
+   border-radius: 5px;
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+   &--active {
+      display: block;
+   }
+   &__bottom {
+      margin-top: 3px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 3px;
+   }
+}

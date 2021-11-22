@@ -1,0 +1,32 @@
+// @import url(/components/UI/WeatherCard/WeatherCard.less);
+@use "reset";
+@use "/components//UI/WeatherCard/WeatherCard";
+@use "/components//UI/WeatherWidget/WeatherWidget.scss";
+
+.container {
+   height: 100vh;
+   width: 100vw;
+   background-color: #eef6fb;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.city__selector {
+   display: flex;
+   width: 600px;
+   justify-content: space-evenly;
+   font-weight: 300;
+   font-size: 2rem;
+   text-transform: uppercase;
+   margin-bottom: 30px;
+
+   &-city {
+      cursor: pointer;
+   }
+   &-city--active {
+      font-weight: 500;
+      color: #5fb0e8;
+   }
+}
