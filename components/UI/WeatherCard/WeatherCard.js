@@ -65,8 +65,7 @@ export default function WeatherCard(props) {
                style={{ width: props.width, height: props.height }}
             >
                <div className="weather-card-large__day">
-                  {todaysDate.setHours(0, 0, 0, 0) ===
-                  new Date(props.forecast.dt_txt).setHours(0, 0, 0, 0)
+                  {props.day === "Today"
                      ? "Today"
                      : getDayString(new Date(props.forecast.dt_txt).getDay())}
                </div>
@@ -93,8 +92,7 @@ export default function WeatherCard(props) {
                style={{ width: props.width, height: props.height }}
             >
                <div className="weather-card__day">
-                  {todaysDate.setHours(0, 0, 0, 0) ===
-                  new Date(props.forecast.dt_txt).setHours(0, 0, 0, 0)
+                  {props.day === "Today"
                      ? "Today"
                      : getDayString(new Date(props.forecast.dt_txt).getDay())}
                </div>

@@ -3,31 +3,36 @@ import { useEffect, useState } from "react";
 
 export default function WeatherWidget(props) {
    const [forecasts, setForecasts] = useState([]);
+   const [todaysWeather, setTodaysWeather] = useState({});
    const todaysDate = new Date();
    const [loadingData, setLoadingData] = useState(true);
 
    useEffect(() => {
-      let data;
+      let forecastData;
+      let todaysData;
       let todaysNotFound = true;
       const getData = async () => {
-         data = await fetch(
-            `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&cnt=34&units=metric&appid=4939a302d4cda8da3083f7219fa36b06`
+         forecastData = await fetch(
+            `https://api.openweathermap.org/data/2.5/forecast?q=${props.city}&cnt=40&units=metric&appid=4939a302d4cda8da3083f7219fa36b06`
          );
-
-         data = await data.json();
+         forecastData = await forecastData.json();
+         todaysData = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&units=metric&appid=4939a302d4cda8da3083f7219fa36b06`
+         );
+         todaysData = await todaysData.json();
 
          setForecasts(
-            data.list.filter((item, i) => {
+            forecastData.list.filter((item, i) => {
                if (
-                  todaysDate.setHours(0, 0, 0, 0) ===
+                  todaysDate.setHours(0, 0, 0, 0) !==
                      new Date(item.dt_txt).setHours(0, 0, 0, 0) &&
-                  todaysNotFound
-               ) {
-                  todaysNotFound = false;
+                  item.dt_txt.includes("15:00:00")
+               )
                   return item;
-               } else if (item.dt_txt.includes("15:00:00")) return item;
             })
          );
+
+         setTodaysWeather(todaysData);
 
          setLoadingData(false);
       };
@@ -50,18 +55,15 @@ export default function WeatherWidget(props) {
                   {/* returns weather card for today */}
                   <WeatherCard
                      type="large"
-                     forecast={forecasts[0]}
+                     forecast={todaysWeather}
                      width="100%"
+                     day="Today"
                   />
                </div>
                <div className="weather-widget__bottom">
-                  {forecasts
-                     .filter((forecast, i) => {
-                        //removes first day
-                        return i > 0;
-                     })
-                     .map((forecast, i) => {
-                        //returns weather card for 4 days
+                  {forecasts.map((forecast, i) => {
+                     //returns weather card for 4 days
+                     if (i < 4) {
                         return (
                            <WeatherCard
                               forecast={forecast}
@@ -69,7 +71,8 @@ export default function WeatherWidget(props) {
                               width="100%"
                            />
                         );
-                     })}
+                     }
+                  })}
                </div>
             </div>
          )}
