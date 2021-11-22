@@ -45,7 +45,7 @@ export default function WeatherCard(props) {
             return <i className="fas fa-sun" style={{ color: "#FFE168" }}></i>;
          case "Snow":
             return (
-               <i class="far fa-snowflake" style={{ color: "#2e4369" }}></i>
+               <i className="far fa-snowflake" style={{ color: "#2e4369" }}></i>
             );
          default:
             break;
