@@ -1,6 +1,3 @@
-import Head from "next/head";
-import Image from "next/image";
-
 export default function WeatherCard(props) {
    const todaysDate = new Date();
 
@@ -27,8 +24,6 @@ export default function WeatherCard(props) {
    };
 
    const getWeatherIcon = (condition) => {
-      console.log("CONDITION");
-      console.log(condition);
       switch (condition) {
          case "Clouds":
             return (
@@ -64,6 +59,7 @@ export default function WeatherCard(props) {
    return (
       <>
          {props.type === "large" ? (
+            //  Large card
             <div
                className="weather-card-large"
                style={{ width: props.width, height: props.height }}
@@ -91,6 +87,7 @@ export default function WeatherCard(props) {
                </div>
             </div>
          ) : (
+            //  Small card
             <div
                className="weather-card"
                style={{ width: props.width, height: props.height }}

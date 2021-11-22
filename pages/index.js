@@ -1,6 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
-import WeatherCard from "../components/UI/WeatherCard/WeatherCard";
 import WeatherWidget from "../components/UI/WeatherWidget/WeatherWidget";
 import { useState } from "react";
 
@@ -28,7 +26,7 @@ export default function Home() {
          <Head>
             <title>Weather App</title>
             <meta name="description" content="A simple weather app" />
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.googleapis.com" />\
             <link
                rel="preconnect"
                href="https://fonts.gstatic.com"
@@ -38,6 +36,10 @@ export default function Home() {
                href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,500&family=Roboto:wght@100;300;400;500;700&display=swap"
                rel="stylesheet"
             ></link>
+            <link
+               href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,500&family=Roboto:wght@100;300;400;500;700&display=swap"
+               rel="stylesheet"
+            />
             <link rel="icon" href="/favicon.ico" />
             <link rel="stylesheet" href="/fontaw/css/all.min.css" />
          </Head>

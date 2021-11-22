@@ -1,5 +1,3 @@
-import Head from "next/head";
-import Image from "next/image";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import { useEffect, useState } from "react";
 
@@ -27,10 +25,10 @@ export default function WeatherWidget(props) {
                ) {
                   todaysNotFound = false;
                   return item;
-               } else if (item.dt_txt.includes("18:00:00")) return item;
+               } else if (item.dt_txt.includes("15:00:00")) return item;
             })
          );
-         console.log(forecasts);
+
          setLoadingData(false);
       };
 
