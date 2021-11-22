@@ -1,5 +1,6 @@
 .weather-widget {
-   width: 600px;
+   max-width: 600px;
+   width: 100%;
    display: none;
    background-color: white;
    padding: 3px;
@@ -14,5 +15,13 @@
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: 3px;
+   }
+}
+
+@media only screen and (max-width: 600px) {
+   .weather-widget {
+      &__bottom {
+         grid-template-columns: 1fr 1fr;
+      }
    }
 }

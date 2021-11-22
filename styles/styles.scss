@@ -6,6 +6,7 @@
 .container {
    height: 100vh;
    width: 100vw;
+   padding: 20px;
    background-color: #eef6fb;
    display: flex;
    flex-direction: column;
@@ -15,7 +16,8 @@
 
 .city__selector {
    display: flex;
-   width: 600px;
+   max-width: 600px;
+   width: 100%;
    justify-content: space-evenly;
    font-weight: 300;
    font-size: 2rem;
@@ -28,5 +30,17 @@
    &-city--active {
       font-weight: 500;
       color: #5fb0e8;
+   }
+}
+
+@media only screen and (max-width: 600px) {
+   .city__selector {
+      font-size: 1.6rem;
+   }
+}
+
+@media only screen and (max-width: 430px) {
+   .city__selector {
+      font-size: 1.2rem;
    }
 }

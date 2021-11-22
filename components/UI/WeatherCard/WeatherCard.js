@@ -41,14 +41,23 @@ export default function WeatherCard(props) {
                   style={{ color: "#bddde3" }}
                ></i>
             );
+         case "Drizzle":
+            return (
+               <i
+                  className="fas fa-cloud-showers-heavy"
+                  style={{ color: "#bddde3" }}
+               ></i>
+            );
          case "Clear":
             return <i className="fas fa-sun" style={{ color: "#FFE168" }}></i>;
          case "Snow":
             return (
                <i className="far fa-snowflake" style={{ color: "#2e4369" }}></i>
             );
+         case "Thunderstorm":
+            return <i className="far fa-bolt" style={{ color: "#FFE168" }}></i>;
          default:
-            break;
+            return <i className="fas fa-sun" style={{ color: "#FFE168" }}></i>;
       }
    };
 
