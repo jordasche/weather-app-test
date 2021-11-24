@@ -52,7 +52,9 @@ export default function WeatherCard(props) {
          case "Thunderstorm":
             return <i className="fas fa-bolt" style={{ color: "#FFE168" }}></i>;
          case "Mist":
-            return <i class="fas fa-stream" style={{ color: "#2e4369" }}></i>;
+            return (
+               <i className="fas fa-stream" style={{ color: "#2e4369" }}></i>
+            );
          case "Smoke":
             return <i className="fas fa-smog" style={{ color: "#FFE168" }}></i>;
          case "Fog":
