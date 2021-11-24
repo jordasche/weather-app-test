@@ -50,15 +50,13 @@ export default function WeatherCard(props) {
                <i className="far fa-snowflake" style={{ color: "#2e4369" }}></i>
             );
          case "Thunderstorm":
-            return <i className="far fa-bolt" style={{ color: "#FFE168" }}></i>;
+            return <i className="fas fa-bolt" style={{ color: "#FFE168" }}></i>;
          case "Mist":
-            return (
-               <i className="far fa-steam" style={{ color: "#FFE168" }}></i>
-            );
+            return <i class="fas fa-stream" style={{ color: "#2e4369" }}></i>;
          case "Smoke":
-            return <i className="far fa-smog" style={{ color: "#FFE168" }}></i>;
+            return <i className="fas fa-smog" style={{ color: "#FFE168" }}></i>;
          case "Fog":
-            return <i className="far fa-smog" style={{ color: "#FFE168" }}></i>;
+            return <i className="fas fa-smog" style={{ color: "#FFE168" }}></i>;
          default:
             return <i className="fas fa-sun" style={{ color: "#FFE168" }}></i>;
       }
